@@ -1,0 +1,26 @@
+{
+  "name": "Chart-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bar.js",
+  "dependencies": {
+    "async": "^2.6.0",
+    "csvjson": "^5.0.0",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netaosman/Charts-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netaosman/Charts-sample/issues"
+  },
+  "homepage": "https://github.com/netaosman/Charts-sample#readme"
+}
