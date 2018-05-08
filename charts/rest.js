@@ -1,8 +1,7 @@
 
 
-
-var lunge_config = {
-    type: 'horizontalBar',
+var rest_config = {
+    type: 'bar',
     data: {
         labels: [],
         datasets: [{
@@ -22,7 +21,7 @@ var lunge_config = {
     options: {
         title: {
             display: true,
-            text: 'Lunge',
+            text: 'Work vs. Rest',
             fontSize: 20,
         },
         legend: {
@@ -33,15 +32,8 @@ var lunge_config = {
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Reps',
-                    fontSize: 16,
-                }
-            }],
-            xAxes: [{
-                scaleLabel: {
-                    display: true,
                     labelString: 'Score',
-                    fontSize: 16
+                    fontSize: 16,
                 },
                 ticks: {
                     max: 10,
@@ -50,39 +42,51 @@ var lunge_config = {
 
                 }
             }],
+            xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Reps',
+                    fontSize: 16
+                },
+                ticks: {
+                    beginAtZero: true,
+                }
+
+            }],
             responsive: true
         }
     }
 };
 
-var l_canvas = document.getElementById("lungeBar").getContext("2d");
-var l_chart = new Chart(l_canvas, lunge_config);
+var rest_canvas = document.getElementById("restBar").getContext("2d");
+var rest_chart = new Chart(rest_canvas, rest_config);
 
 
-function addDataToLunge(index, label) {
+function addDataToRest(index, label) {
 
     // data, backgroundColor, borderColor
     let details = getDetails(index);
 
-    l_chart.data.labels.push(label);
+    rest_chart.data.labels.push(label);
     // cahert.data.dataset[0].borderWidth = borderWidth;
 
     if (index == 1) {
-        lunge_config.data.datasets[0].data[0] = details.data;
-        lunge_config.data.datasets[0].backgroundColor[0] = details.bg;
-        lunge_config.data.datasets[0].borderColor[0] = details.borderColor;
+        rest_config.data.datasets[0].data[0] = details.data;
+        rest_config.data.datasets[0].backgroundColor[0] = details.bg;
+        rest_config.data.datasets[0].borderColor[0] = details.borderColor;
+
     } else {
-        l_chart.data.datasets.forEach((dataset) => {
+        rest_chart.data.datasets.forEach((dataset) => {
             dataset.data.push(details.data);
             dataset.backgroundColor.push(details.bg);
             dataset.borderColor.push(details.borderColor);
         });
     }
-    l_chart.update();
+    rest_chart.update();
 }
 
 
-export { addDataToLunge }
+export { addDataToRest }
 
 
 
@@ -90,7 +94,7 @@ function getDetails(index) {
 
     let data;
     let bg;
-    let borderColor = '#b30059';
+    let borderColor = '#003d99';
 
     if (index == 1) {
         data = 4;
@@ -110,7 +114,7 @@ function getDetails(index) {
 
     } else {
         data = 6;
-        bg = '#b30059';
+        bg = '#1a75ff';
     }
 
     return {
@@ -163,7 +167,7 @@ function getDetails(index) {
 //         label = bp_reps;
 //         borderColor = '#003d99';
 
-//         addDataToBp(bp_i, lunge_config, label, data, backgroundColor, borderColor);
+//         addDataToBp(bp_i, rest_config, label, data, backgroundColor, borderColor);
 
 //         if (bp_reps == 5) {
 //             clearInterval(bp_interval);

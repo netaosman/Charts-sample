@@ -1,4 +1,8 @@
 import { addDataToBp } from './bpBar.js';
+import { addDataToLunge } from './lunge.js';
+import { addDataToShoulders } from './shoulders.js';
+import { addDataToRest } from './rest.js';
+
 
 var array = [
     {
@@ -9080,18 +9084,85 @@ function pageLoad() {
     startButton.onclick = getChart;
 }
 
-var index = 0;
+var reps = 0;
 function getChart() {
+    reps = 0;
 
     var intervalObj = setInterval(function () {
-        index++;
-        console.log(index);
-        addDataToBp(index, index);
 
-        if (index == 5) {
-            clearInterval(intervalObj);
-            console.log("done");
-        }
+        //functions
+        let type = getType();
+        var fun = cahrtHandler[type];
+        fun(reps, reps);
 
-    }, 1000);
+        //clearing
+        getClearInterval(reps, intervalObj);
+
+    }, 100);
+}
+
+
+var cahrtHandler = {
+
+    "bpBar": addDataToBp,
+    "lungeBar": addDataToLunge,
+    "shouldersBar": addDataToShoulders,
+    "restBar": addDataToRest
+
+}
+
+/** 
+ * define the chart type
+*/
+function getType() {
+
+    reps++;
+    let type;
+
+    if (reps <= 5) {
+        type = "bpBar";
+
+    } else if (reps <= 9) {
+        type = "lungeBar";
+
+    } else if (reps <= 14) {
+        type = "shouldersBar";
+
+    } else if (reps <= 19) {
+        type = "restBar"
+    }
+
+    console.log("reps: " + reps + " type: " + type);
+    return type;
+
+}
+
+/** 
+ * Clearing the interval object
+*/
+function getClearInterval(reps, intervalObj) {
+
+    if (reps == 5) {
+        console.log('==');
+        console.log("Bp is done");
+        console.log('==');
+
+    } else if (reps == 9) {
+        // clearInterval(intervalObj);
+        console.log('==');
+        console.log("Lunge is done");
+        console.log('==');
+
+    } else if (reps == 14) {
+        // clearInterval(intervalObj);
+        console.log('==');
+        console.log("Shoulders is done");
+        console.log('==');
+
+    } else if (reps == 19) {
+        clearInterval(intervalObj);
+        console.log('==');
+        console.log("Rest is done");
+        console.log('==');
+    }
 }

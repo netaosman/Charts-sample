@@ -1,7 +1,7 @@
 
 
 
-var lunge_config = {
+var sh_config = {
     type: 'horizontalBar',
     data: {
         labels: [],
@@ -22,7 +22,7 @@ var lunge_config = {
     options: {
         title: {
             display: true,
-            text: 'Lunge',
+            text: 'Shoulders',
             fontSize: 20,
         },
         legend: {
@@ -55,34 +55,34 @@ var lunge_config = {
     }
 };
 
-var l_canvas = document.getElementById("lungeBar").getContext("2d");
-var l_chart = new Chart(l_canvas, lunge_config);
+var sh_canvas = document.getElementById("shouldersBar").getContext("2d");
+var sh_chart = new Chart(sh_canvas, sh_config);
 
 
-function addDataToLunge(index, label) {
+function addDataToShoulders(index, label) {
 
     // data, backgroundColor, borderColor
     let details = getDetails(index);
 
-    l_chart.data.labels.push(label);
+    sh_chart.data.labels.push(label);
     // cahert.data.dataset[0].borderWidth = borderWidth;
 
     if (index == 1) {
-        lunge_config.data.datasets[0].data[0] = details.data;
-        lunge_config.data.datasets[0].backgroundColor[0] = details.bg;
-        lunge_config.data.datasets[0].borderColor[0] = details.borderColor;
+        sh_config.data.datasets[0].data[0] = details.data;
+        sh_config.data.datasets[0].backgroundColor[0] = details.bg;
+        sh_config.data.datasets[0].borderColor[0] = details.borderColor;
     } else {
-        l_chart.data.datasets.forEach((dataset) => {
+        sh_chart.data.datasets.forEach((dataset) => {
             dataset.data.push(details.data);
             dataset.backgroundColor.push(details.bg);
             dataset.borderColor.push(details.borderColor);
         });
     }
-    l_chart.update();
+    sh_chart.update();
 }
 
 
-export { addDataToLunge }
+export { addDataToShoulders }
 
 
 
@@ -163,7 +163,7 @@ function getDetails(index) {
 //         label = bp_reps;
 //         borderColor = '#003d99';
 
-//         addDataToBp(bp_i, lunge_config, label, data, backgroundColor, borderColor);
+//         addDataToBp(bp_i, sh_config, label, data, backgroundColor, borderColor);
 
 //         if (bp_reps == 5) {
 //             clearInterval(bp_interval);

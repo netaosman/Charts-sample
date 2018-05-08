@@ -12,30 +12,45 @@
         crossorigin="anonymous">
     <!-- 
     <title>Hello, world!</title> -->
+    <link rel="stylesheet" href="cahrts/css/deshboard.css">
 </head>
 
 <body>
     <!-- <h1>Hello, world!</h1> -->
 
     <div class="container-fluid">
+        <br>
+        <br>
+        <button id="start">Start Demo</button>
+        <button id="start">Restart</button>
+        <br>
+        <br>
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="row">
 
                 <!-- BP_REPS -->
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <br>
-                    <br>
-                    <button id="start">Start Demo</button>
-                    <br>
-                    <br>
+                <div  class="col-lg-3 col-md-3 col-sm-3">
                     <canvas id="bpBar" width="400" height="400"></canvas>
                     <!-- <input type="button" value="Add Value" onclick="createChart()"> -->
                 </div>
 
                 <!-- LUNGH -->
-                <!-- <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="col-lg-3 col-md-3 col-sm-3">
                     <canvas id="lungeBar" width="400" height="400"></canvas>
-                    <input type="button" value="Add Value" onclick="createChart()"> -->
+                    <br>
+                </div>
+            </div>
+            <!-- Row two -->
+            <div class="row">
+
+                <!-- Shoulders Chart -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <canvas id="shouldersBar" width="400" height="400"></canvas>
+                </div>
+
+                <!-- Rest Chart -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <canvas id="restBar" width="400" height="400"></canvas>
                 </div>
 
             </div>
@@ -61,7 +76,7 @@
     <!-- <script src="./charts/bpBar.js"></script> -->
     <!-- <script src="./charts/lunge.js"></script> -->
 
-    <script src="./charts/tryBar.js"  type="module"></script>
+    <!-- <script src="./charts/tryBar.js"  type="module"></script> -->
 
 
 
