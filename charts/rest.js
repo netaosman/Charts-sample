@@ -20,7 +20,7 @@ var rest_config = {
     },
     options: {
         title: {
-            display: true,
+            display: false,
             text: 'Work vs. Rest',
             fontSize: 20,
         },
@@ -31,7 +31,7 @@ var rest_config = {
         scales: {
             yAxes: [{
                 scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: 'Score',
                     fontSize: 16,
                 },
@@ -44,7 +44,7 @@ var rest_config = {
             }],
             xAxes: [{
                 scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: 'Reps',
                     fontSize: 16
                 },
@@ -60,6 +60,7 @@ var rest_config = {
 
 var rest_canvas = document.getElementById("restBar").getContext("2d");
 var rest_chart = new Chart(rest_canvas, rest_config);
+
 
 
 function addDataToRest(index, label) {

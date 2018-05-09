@@ -21,7 +21,7 @@ var lunge_config = {
     },
     options: {
         title: {
-            display: true,
+            display: false,
             text: 'Lunge',
             fontSize: 20,
         },
@@ -32,14 +32,14 @@ var lunge_config = {
         scales: {
             yAxes: [{
                 scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: 'Reps',
                     fontSize: 16,
                 }
             }],
             xAxes: [{
                 scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: 'Score',
                     fontSize: 16
                 },
@@ -90,11 +90,11 @@ function getDetails(index) {
 
     let data;
     let bg;
-    let borderColor = '#b30059';
+    let borderColor = '#0040ff';
 
     if (index == 1) {
         data = 4;
-        bg = '#80b3ff';
+        bg = '#0040ff';
 
     } else if (index == 2) {
         data = 9;
@@ -110,7 +110,7 @@ function getDetails(index) {
 
     } else {
         data = 6;
-        bg = '#b30059';
+        bg = '#0040ff';
     }
 
     return {

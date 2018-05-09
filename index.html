@@ -19,6 +19,7 @@
     <!-- <h1>Hello, world!</h1> -->
 
     <div class="container-fluid">
+            <!-- <div class="container"> -->
         <br>
         <br>
         <button id="start">Start Demo</button>
@@ -29,39 +30,63 @@
             <div class="row">
 
                 <!-- BP_REPS -->
-                <div  class="col-lg-3 col-md-3 col-sm-3">
-                    <canvas id="bpBar" width="400" height="400"></canvas>
-                    <!-- <input type="button" value="Add Value" onclick="createChart()"> -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="card card-3">
+                        <div class="card-header">Bench Press</div>
+                        <div class="card-body">
+                            <canvas id="bpBar" width="300" height="250"></canvas>
+                        </div>
+                        <br>
+                    </div>
                 </div>
 
                 <!-- LUNGH -->
                 <div class="col-lg-3 col-md-3 col-sm-3">
-                    <canvas id="lungeBar" width="400" height="400"></canvas>
-                    <br>
+                    <div class="card card-3">
+                        <div class="card-header">Lunge</div>
+                        <div class="card-body">
+                            <canvas id="lungeBar" width="300" height="250"></canvas>
+                        </div>
+                        <br>
+                    </div>
                 </div>
             </div>
+
             <!-- Row two -->
             <div class="row">
 
-                <!-- Shoulders Chart -->
                 <div class="col-lg-3 col-md-3 col-sm-3">
-                    <canvas id="shouldersBar" width="400" height="400"></canvas>
+                    <div class="card card-3">
+                        <div class="card-header">Shoulders</div>
+                        <div class="card-body">
+                            <canvas id="shouldersBar" width="300" height="250"></canvas>
+                        </div>
+                        <br>
+                    </div>
                 </div>
 
                 <!-- Rest Chart -->
                 <div class="col-lg-3 col-md-3 col-sm-3">
-                    <canvas id="restBar" width="400" height="400"></canvas>
+                    <div class="card card-3">
+                        <div class="card-header">Work vs. Rest</div>
+                        <div class="card-body">
+                            <canvas id="restBar" width="300" height="250"></canvas>
+                        </div>
+                        <br>
+                    </div>
                 </div>
-
             </div>
-            <div class="col-6 col-md-4">
-                <!-- <canvas id='horizontal' height="200" width="200"></canvas> -->
-                <!-- <canvas id="bar" width="400" height="150"></canvas> -->
-            </div>
-
         </div>
 
-        <!-- <div class="col-sm-8 col-md-7 py-4">
+    </div>
+    <div class="col-6 col-md-4">
+        <!-- <canvas id='horizontal' height="200" width="200"></canvas> -->
+        <!-- <canvas id="bar" width="400" height="150"></canvas> -->
+    </div>
+
+    </div>
+
+    <!-- <div class="col-sm-8 col-md-7 py-4">
             <canvas id='horizontal' height="200" width="200"></canvas>
         </div> -->
     </div>

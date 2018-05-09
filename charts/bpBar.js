@@ -13621,7 +13621,7 @@ var bp_config = {
     },
     options: {
         title: {
-            display: true,
+            display: false,
             text: 'Bench Press',
             fontSize: 20,
         },
@@ -13632,7 +13632,7 @@ var bp_config = {
         scales: {
             yAxes: [{
                 scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: 'Score',
                     fontSize: 16,
                 },
@@ -13645,7 +13645,7 @@ var bp_config = {
             }],
             xAxes: [{
                 scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: 'Reps',
                     fontSize: 16
                 },
