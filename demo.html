@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i" rel="stylesheet">
+
+    <title> </title>
+    <link rel="stylesheet" href="cahrts/css/demo.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="s-container">
+        <div class="left-container">
+            <div class="s-row">
+                <!-- Bp -->
+                <div class="card left-card">
+                    <div class="card-header">Bench Press
+                    </div>
+                    <div class="card-body">
+                        <canvas id="bpBar" width="300" height="220"></canvas>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="card left-card">
+                    <div class="card-header">Lunge
+                    </div>
+                    <div class="card-body">
+                        <canvas id="lungeBar" width="300" height="220"></canvas>
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+
+            <div class="s-row">
+
+                <div class="card left-card">
+                    <div class="card-header">Shoulders
+                    </div>
+                    <div class="card-body">
+                        <canvas id="shouldersBar" width="300" height="220"></canvas>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="card left-card">
+                    <div class="card-header">Work vs. Rest
+                    </div>
+                    <div class="card-body">
+                        <canvas id="restBar" width="300" height="220"></canvas>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <!-- <h1 id="stoper">0</h1> -->
+            <div class="video">
+                <video id="video1">
+                    <source src="charts/video/demo_video.mp4" type="video/mp4">
+                </video>
+                <!-- <br> -->
+                <button id="start" type="button" class="btn btn-primary active btn-lg">Start Demo</button>
+            </div>
+        </div>
+
+        <!-- Source Code -->
+        <script src="charts/timer.js" type="module"></script>
+        <!-- <script src="charts/play.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

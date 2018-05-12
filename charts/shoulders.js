@@ -16,7 +16,7 @@ var sh_config = {
                 // '#003d99'
 
             ],
-            borderWidth: 2
+            borderWidth: 0
         }]
     },
     options: {
@@ -39,7 +39,7 @@ var sh_config = {
             }],
             xAxes: [{
                 scaleLabel: {
-                    display: false,
+                    display: true,
                     labelString: 'Score',
                     fontSize: 16
                 },
@@ -58,16 +58,17 @@ var sh_config = {
 var sh_canvas = document.getElementById("shouldersBar").getContext("2d");
 var sh_chart = new Chart(sh_canvas, sh_config);
 
-
-function addDataToShoulders(index, label) {
+var reps_i = 0;
+function addDataToShoulders() {
 
     // data, backgroundColor, borderColor
-    let details = getDetails(index);
+    reps_i++;
+    let details = getDetails(reps_i);
 
-    sh_chart.data.labels.push(label);
+    sh_chart.data.labels.push(reps_i);
     // cahert.data.dataset[0].borderWidth = borderWidth;
 
-    if (index == 1) {
+    if (reps_i == 1) {
         sh_config.data.datasets[0].data[0] = details.data;
         sh_config.data.datasets[0].backgroundColor[0] = details.bg;
         sh_config.data.datasets[0].borderColor[0] = details.borderColor;
@@ -93,24 +94,25 @@ function getDetails(index) {
     let borderColor = '#b30059';
 
     if (index == 1) {
-        data = 4;
-        bg = '#80b3ff';
+        data = 5;
+        bg = '#10c4b5';
 
     } else if (index == 2) {
-        data = 9;
-        bg = '#003380';
+        data = 8;
+        bg = '#0e8174';
 
     } else if (index == 3) {
-        data = 5;
-        bg = '#3385ff';
+        data = 4;
+        bg = '#acf08f';
 
     } else if (index == 4) {
-        data = 7;
-        bg = '#0052cc';
+        data = 9;
+        bg = '#005562';
 
     } else {
-        data = 6;
-        bg = '#b30059';
+        data = 7;
+        bg = '#6eba8c';
+        
     }
 
     return {

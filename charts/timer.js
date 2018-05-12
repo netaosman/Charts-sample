@@ -2,6 +2,7 @@ import { addDataToBp } from './bpBar.js';
 import { addDataToLunge } from './lunge.js';
 import { addDataToShoulders } from './shoulders.js';
 import { addDataToRest } from './rest.js';
+import { playPause } from './play.js';
 
 
 var array = [
@@ -9077,65 +9078,104 @@ array = JSON.stringify(array);
 array = JSON.parse(array);
 
 window.onload = pageLoad;
-
 function pageLoad() {
 
     var startButton = document.getElementById("start");
-    startButton.onclick = getChart;
+    startButton.onclick = start;
 }
 
+
+function start() {
+    getChart();
+    playPause();
+}
+
+
+var i = -1;
 var reps = 0;
+var work_sum = 0;
+var rest_sum = 0;
+
 function getChart() {
-    reps = 0;
 
-    var intervalObj = setInterval(function () {
+    var work_time;
+    var exer;
+    var type;
 
-        //functions
-        let type = getType();
-        var fun = cahrtHandler[type];
-        fun(reps, reps);
+
+
+    // time = array[i].time;
+
+    var intervalObj = setInterval(() => {
+
+        i++;
+
+        if (!array[i]) {
+            console.log('Done');
+            clearInterval(intervalObj);
+
+        } else {
+
+            exer = array[i].exer;
+            work_time = array[i].work_time;
+
+            if (work_time == 0) {
+
+                addDataToRest(false);
+
+
+            } else if (work_time == 1) {
+
+
+                if (exer == "bp_reps") {
+                    type = exer;
+
+                } else if (exer == "ll_reps") {
+                    type = exer;
+
+                } else if (exer == "rl_reps") {
+                    type = exer;
+
+                } else if (exer == "s_reps") {
+                    type = exer;
+
+                }
+
+                addDataToRest(true);
+
+                if (type) {
+                    reps++;
+                    var fun = cahrtHandler[type];
+                    fun();
+                    type = null;
+                }
+
+            }
+
+        }
+
+
+
+
+
 
         //clearing
-        getClearInterval(reps, intervalObj);
+        // getClearInterval(reps, intervalObj);
 
-    }, 100);
+    }, 33);
 }
 
 
 var cahrtHandler = {
 
-    "bpBar": addDataToBp,
-    "lungeBar": addDataToLunge,
-    "shouldersBar": addDataToShoulders,
-    "restBar": addDataToRest
+    "bp_reps": addDataToBp,
+    "ll_reps": addDataToLunge,
+    "rl_reps": addDataToLunge,
+    "s_reps": addDataToShoulders
 
 }
 
-/** 
- * define the chart type
-*/
-function getType() {
 
-    reps++;
-    let type;
-
-    if (reps <= 5) {
-        type = "bpBar";
-
-    } else if (reps <= 9) {
-        type = "lungeBar";
-
-    } else if (reps <= 14) {
-        type = "shouldersBar";
-
-    } else if (reps <= 19) {
-        type = "restBar"
-    }
-
-    console.log("reps: " + reps + " type: " + type);
-    return type;
-
-}
 
 /** 
  * Clearing the interval object
@@ -9143,26 +9183,26 @@ function getType() {
 function getClearInterval(reps, intervalObj) {
 
     if (reps == 5) {
-        console.log('==');
-        console.log("Bp is done");
-        console.log('==');
+        // console.log('==');
+        // console.log("Bp is done");
+        // console.log('==');
 
     } else if (reps == 9) {
         // clearInterval(intervalObj);
-        console.log('==');
-        console.log("Lunge is done");
-        console.log('==');
+        // console.log('==');
+        // console.log("Lunge is done");
+        // console.log('==');
 
     } else if (reps == 14) {
         // clearInterval(intervalObj);
-        console.log('==');
-        console.log("Shoulders is done");
-        console.log('==');
+        // console.log('==');
+        // console.log("Shoulders is done");
+        // console.log('==');
 
     } else if (reps == 19) {
         clearInterval(intervalObj);
-        console.log('==');
-        console.log("Rest is done");
-        console.log('==');
+        // console.log('==');
+        // console.log("Rest is done");
+        // console.log('==');
     }
 }

@@ -3,19 +3,19 @@
 var rest_config = {
     type: 'bar',
     data: {
-        labels: [],
+        labels: ["Work", "Rest"],
         datasets: [{
             // label: "data",
-            data: [],
+            data: [0, 0],
             backgroundColor: [
-                // '#80b3ff'
+                '#10c4b5', '#6eba8c'
 
             ],
             borderColor: [
                 // '#003d99'
 
             ],
-            borderWidth: 2
+            borderWidth: 0
         }]
     },
     options: {
@@ -36,9 +36,9 @@ var rest_config = {
                     fontSize: 16,
                 },
                 ticks: {
-                    max: 10,
+                    max: 60,
                     min: 0,
-                    stepSize: 1,
+                    // stepSize: 1,
 
                 }
             }],
@@ -62,27 +62,19 @@ var rest_canvas = document.getElementById("restBar").getContext("2d");
 var rest_chart = new Chart(rest_canvas, rest_config);
 
 
+var reps_i = 0;
+var add = 0.033;
+function addDataToRest(work) {
+    reps_i++;
+    add = add + 0.033;
 
-function addDataToRest(index, label) {
-
-    // data, backgroundColor, borderColor
-    let details = getDetails(index);
-
-    rest_chart.data.labels.push(label);
-    // cahert.data.dataset[0].borderWidth = borderWidth;
-
-    if (index == 1) {
-        rest_config.data.datasets[0].data[0] = details.data;
-        rest_config.data.datasets[0].backgroundColor[0] = details.bg;
-        rest_config.data.datasets[0].borderColor[0] = details.borderColor;
+    if (work) {
+        rest_config.data.datasets[0].data[0] = add;
 
     } else {
-        rest_chart.data.datasets.forEach((dataset) => {
-            dataset.data.push(details.data);
-            dataset.backgroundColor.push(details.bg);
-            dataset.borderColor.push(details.borderColor);
-        });
+        rest_config.data.datasets[0].data[1] = add;
     }
+
     rest_chart.update();
 }
 
@@ -125,58 +117,5 @@ function getDetails(index) {
         borderColor: borderColor
     }
 }
-
-
-// var bp_i = 0;
-// var bp_reps = 0;
-// var bp_time = Number(bp_array[bp_i].time);
-
-
-// let bp_interval = setInterval(function () {
-
-//     let backgroundColor, data, label, borderColor, borderWidth;
-
-//     var bpRep = bp_array[bp_i].bp_reps;
-//     bp_i++;
-//     bp_time = Number(bp_array[bp_i].time) * 700;
-
-//     if (bpRep == 1) {
-//         bp_reps++;
-//         console.log(bp_reps);
-
-//         if (bp_reps == 1) {
-//             data = 4;
-//             backgroundColor = '#80b3ff';
-
-//         } else if (bp_reps == 2) {
-//             data = 9;
-//             backgroundColor = '#003380';
-
-//         } else if (bp_reps == 3) {
-//             data = 5;
-//             backgroundColor = '#3385ff';
-
-//         } else if (bp_reps == 4) {
-//             data = 7;
-//             backgroundColor = '#0052cc';
-
-//         } else {
-//             data = 6;
-//             backgroundColor = '#1a75ff';
-//         }
-
-//         label = bp_reps;
-//         borderColor = '#003d99';
-
-//         addDataToBp(bp_i, rest_config, label, data, backgroundColor, borderColor);
-
-//         if (bp_reps == 5) {
-//             clearInterval(bp_interval);
-//             console.log("bpRep is done");
-//         }
-
-//     }
-
-// }, bp_time);
 
 

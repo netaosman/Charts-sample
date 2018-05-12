@@ -1,0 +1,43 @@
+.s-container{
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.s-row{
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.s-card{
+    background-color: grey;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    height: 100px;
+    margin: 0  1%;
+    flex: 1;
+}
+
+.s-card-2{
+    flex: 3
+}
+
+.left-container{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+.right-container{
+    width: 30%;
+    display: flex;
+    align-items: center
+}
