@@ -2,7 +2,7 @@
 
 
 var sh_config = {
-    type: 'horizontalBar',
+    type: 'bar',
     data: {
         labels: [],
         datasets: [{
@@ -32,14 +32,20 @@ var sh_config = {
         scales: {
             yAxes: [{
                 scaleLabel: {
-                    display: false,
-                    labelString: 'Reps',
+                    display: true,
+                    labelString: 'Score',
                     fontSize: 16,
+                },
+                ticks: {
+                    max: 10,
+                    min: 0,
+                    stepSize: 1,
+
                 }
             }],
             xAxes: [{
                 scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: 'Score',
                     fontSize: 16
                 },
