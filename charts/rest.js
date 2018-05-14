@@ -8,7 +8,12 @@ var rest_config = {
             // label: "data",
             data: [0, 0],
             backgroundColor: [
-                '#10c4b5', '#6eba8c'
+
+                '#2b3d52', '#dc5960'
+                //slack
+                // '#4d394b', '#dc5960'
+                // grren
+                // '#10c4b5', '#6eba8c'
 
             ],
             borderColor: [
@@ -19,6 +24,7 @@ var rest_config = {
         }]
     },
     options: {
+        cornerRadius: 10,
         title: {
             display: false,
             text: 'Work vs. Rest',

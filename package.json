@@ -6,6 +6,7 @@
   "dependencies": {
     "async": "^2.6.0",
     "csvjson": "^5.0.0",
+    "easytimer.js": "^2.2.1",
     "fs": "0.0.1-security"
   },
   "devDependencies": {},

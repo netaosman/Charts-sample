@@ -3,7 +3,7 @@ import { addDataToLunge } from './lunge.js';
 import { addDataToShoulders } from './shoulders.js';
 import { addDataToRest } from './rest.js';
 import { playPause } from './play.js';
-
+import { startTimer, stopTimer } from './easytimer.js';
 
 var array = [
     {
@@ -9086,8 +9086,10 @@ function pageLoad() {
 
 
 function start() {
+
     getChart();
     playPause();
+    startTimer();
 }
 
 
@@ -9102,8 +9104,6 @@ function getChart() {
     var exer;
     var type;
 
-
-
     // time = array[i].time;
 
     var intervalObj = setInterval(() => {
@@ -9112,6 +9112,7 @@ function getChart() {
 
         if (!array[i]) {
             console.log('Done');
+            // stopTimer();
             clearInterval(intervalObj);
 
         } else {

@@ -20,6 +20,7 @@ var sh_config = {
         }]
     },
     options: {
+        cornerRadius: 10,
         title: {
             display: false,
             text: 'Shoulders',
@@ -92,32 +93,32 @@ function addDataToShoulders() {
 export { addDataToShoulders }
 
 
-
+//Blue
 function getDetails(index) {
 
     let data;
     let bg;
-    let borderColor = '#b30059';
+    let borderColor = '#2b3d52';
 
     if (index == 1) {
         data = 5;
-        bg = '#10c4b5';
+        bg = '#2b3d52';
 
     } else if (index == 2) {
         data = 8;
-        bg = '#0e8174';
+        bg = '#2b3d52';
 
     } else if (index == 3) {
         data = 4;
-        bg = '#acf08f';
+        bg = '#2b3d52';
 
     } else if (index == 4) {
         data = 9;
-        bg = '#005562';
+        bg = '#2b3d52';
 
     } else {
         data = 7;
-        bg = '#6eba8c';
+        bg = '#2b3d52';
         
     }
 
@@ -128,6 +129,85 @@ function getDetails(index) {
         borderColor: borderColor
     }
 }
+
+
+
+//slack style
+// function getDetails(index) {
+
+//     let data;
+//     let bg;
+//     let borderColor = '#b30059';
+
+//     if (index == 1) {
+//         data = 5;
+//         bg = '#4d394b';
+
+//     } else if (index == 2) {
+//         data = 8;
+//         bg = '#4d394b';
+
+//     } else if (index == 3) {
+//         data = 4;
+//         bg = '#4d394b';
+
+//     } else if (index == 4) {
+//         data = 9;
+//         bg = '#4d394b';
+
+//     } else {
+//         data = 7;
+//         bg = '#4d394b';
+        
+//     }
+
+//     return {
+
+//         data: data,
+//         bg: bg,
+//         borderColor: borderColor
+//     }
+// }
+
+
+
+
+//Green style
+// function getDetails(index) {
+
+//     let data;
+//     let bg;
+//     let borderColor = '#b30059';
+
+//     if (index == 1) {
+//         data = 5;
+//         bg = '#10c4b5';
+
+//     } else if (index == 2) {
+//         data = 8;
+//         bg = '#0e8174';
+
+//     } else if (index == 3) {
+//         data = 4;
+//         bg = '#acf08f';
+
+//     } else if (index == 4) {
+//         data = 9;
+//         bg = '#005562';
+
+//     } else {
+//         data = 7;
+//         bg = '#6eba8c';
+        
+//     }
+
+//     return {
+
+//         data: data,
+//         bg: bg,
+//         borderColor: borderColor
+//     }
+// }
 
 
 // var bp_i = 0;

@@ -1,6 +1,5 @@
 
 
-
 var lunge_config = {
     type: 'bar',
     data: {
@@ -23,6 +22,7 @@ var lunge_config = {
         ]
     },
     options: {
+        cornerRadius: 10,
         title: {
             display: false,
             text: 'Lunge',
@@ -57,7 +57,7 @@ var lunge_config = {
                 ticks: {
                     beginAtZero: true,
                 }
-               
+
             }],
             responsive: true
         }
@@ -117,7 +117,6 @@ function addDataToLunge() {
 export { addDataToLunge }
 
 
-
 function getDetails(index) {
 
     let data;
@@ -126,33 +125,33 @@ function getDetails(index) {
 
     if (index == 1) {
         data = 6;
-        bg = '#0e8174';
+        bg = '#2b3d52';
 
     } else if (index == 2) {
         data = 5;
-        bg = '#0e8174';
+        bg = '#2b3d52';
 
     } else if (index == 3) {
         data = 7;
-        bg = '#0e8174';
+        bg = '#2b3d52';
 
     } else if (index == 4) {
         data = 8;
-        bg = '#0e8174';
+        bg = '#2b3d52';
         //R
     } else if (index == 5) {
         data = 4;
-        bg = '#6eba8c';
+        bg = '#4C9689';
 
     } else if (index == 6) {
         data = 7;
-        bg = '#6eba8c';
+        bg = '#4C9689';
     } else if (index == 7) {
         data = 9;
-        bg = '#6eba8c';
+        bg = '#4C9689';
     } else if (index == 8) {
         data = 4;
-        bg = '#6eba8c';
+        bg = '#4C9689';
     }
 
     return {
@@ -162,5 +161,100 @@ function getDetails(index) {
         borderColor: borderColor
     }
 }
+
+// slack
+// function getDetails(index) {
+
+//     let data;
+//     let bg;
+//     let borderColor = '#0e8174';
+
+//     if (index == 1) {
+//         data = 6;
+//         bg = '#4d394b';
+
+//     } else if (index == 2) {
+//         data = 5;
+//         bg = '#4d394b';
+
+//     } else if (index == 3) {
+//         data = 7;
+//         bg = '#4d394b';
+
+//     } else if (index == 4) {
+//         data = 8;
+//         bg = '#4d394b';
+//         //R
+//     } else if (index == 5) {
+//         data = 4;
+//         bg = '#4C9689';
+
+//     } else if (index == 6) {
+//         data = 7;
+//         bg = '#4C9689';
+//     } else if (index == 7) {
+//         data = 9;
+//         bg = '#4C9689';
+//     } else if (index == 8) {
+//         data = 4;
+//         bg = '#4C9689';
+//     }
+
+//     return {
+
+//         data: data,
+//         bg: bg,
+//         borderColor: borderColor
+//     }
+// }
+
+
+
+//Green style
+
+// function getDetails(index) {
+
+//     let data;
+//     let bg;
+//     let borderColor = '#0e8174';
+
+//     if (index == 1) {
+//         data = 6;
+//         bg = '#0e8174';
+
+//     } else if (index == 2) {
+//         data = 5;
+//         bg = '#0e8174';
+
+//     } else if (index == 3) {
+//         data = 7;
+//         bg = '#0e8174';
+
+//     } else if (index == 4) {
+//         data = 8;
+//         bg = '#0e8174';
+//         //R
+//     } else if (index == 5) {
+//         data = 4;
+//         bg = '#6eba8c';
+
+//     } else if (index == 6) {
+//         data = 7;
+//         bg = '#6eba8c';
+//     } else if (index == 7) {
+//         data = 9;
+//         bg = '#6eba8c';
+//     } else if (index == 8) {
+//         data = 4;
+//         bg = '#6eba8c';
+//     }
+
+//     return {
+
+//         data: data,
+//         bg: bg,
+//         borderColor: borderColor
+//     }
+// }
 
 
