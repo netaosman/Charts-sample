@@ -1,7 +1,7 @@
-import { addDataToBp } from './bpBar.js';
-import { addDataToLunge } from './lunge.js';
-import { addDataToShoulders } from './shoulders.js';
-import { addDataToRest } from './rest.js';
+import { addDataToBp } from './exercises/bpBar.js';
+import { addDataToLunge } from './exercises/lunge.js';
+import { addDataToShoulders } from './exercises/shoulders.js';
+import { addDataToRest } from './exercises/rest.js';
 import { playPause } from './play.js';
 import { startTimer, stopTimer } from './easytimer.js';
 
