@@ -4,24 +4,25 @@ var rest_config = {
     type: 'bar',
     data: {
         labels: ["Work", "Rest"],
-        datasets: [{
-            // label: "data",
-            data: [0, 0],
-            backgroundColor: [
+        datasets: [
+            {
+                // label: "data",
+                data: [0, 0],
+                backgroundColor: [
 
-                '#2b3d52', '#dc5960'
-                //slack
-                // '#4d394b', '#dc5960'
-                // grren
-                // '#10c4b5', '#6eba8c'
+                    '#2b3d52', '#dc5960'
+                    //slack
+                    // '#4d394b', '#dc5960'
+                    // grren
+                    // '#10c4b5', '#6eba8c'
 
-            ],
-            borderColor: [
-                // '#003d99'
+                ],
+                borderColor: [
+                    // '#003d99'
 
-            ],
-            borderWidth: 0
-        }]
+                ],
+                borderWidth: 0
+            }]
     },
     options: {
         cornerRadius: 10,
@@ -45,7 +46,6 @@ var rest_config = {
                     max: 60,
                     min: 0,
                     // stepSize: 1,
-
                 }
             }],
             xAxes: [{
@@ -69,16 +69,18 @@ var rest_chart = new Chart(rest_canvas, rest_config);
 
 
 var reps_i = 0;
-var add = 0.033;
+var add = 0.03;
+var rest = 0.03;
 function addDataToRest(work) {
     reps_i++;
-    add = add + 0.033;
+    add = add + 0.03;
+    rest = rest + 0.04;
 
     if (work) {
         rest_config.data.datasets[0].data[0] = add;
 
     } else {
-        rest_config.data.datasets[0].data[1] = add;
+        rest_config.data.datasets[0].data[1] = rest;
     }
 
     rest_chart.update();

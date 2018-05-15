@@ -102,23 +102,23 @@ function getDetails(index) {
 
     if (index == 1) {
         data = 5;
-        bg = '#2b3d52';
+        bg = '#4C9689';
 
     } else if (index == 2) {
         data = 8;
-        bg = '#2b3d52';
+        bg = '#4C9689';
 
     } else if (index == 3) {
         data = 4;
-        bg = '#2b3d52';
+        bg = '#4C9689';
 
     } else if (index == 4) {
         data = 9;
-        bg = '#2b3d52';
+        bg = '#4C9689';
 
     } else {
         data = 7;
-        bg = '#2b3d52';
+        bg = '#4C9689';
         
     }
 
